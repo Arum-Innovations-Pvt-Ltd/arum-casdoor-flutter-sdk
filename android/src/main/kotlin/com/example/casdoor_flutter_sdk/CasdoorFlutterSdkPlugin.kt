@@ -63,9 +63,9 @@ class CasdoorFlutterSdkPlugin(private var context: Context? = null, private var 
 
                 callbacks[callbackUrlScheme] = resultCallback
 
-                val webView = findViewById<WebView>(R.id.webView)
-                webView.settings.javaScriptEnabled = true
-
+                val webView = WebView(context)
+                val settings = webView.settings
+                settings.javaScriptEnabled = true
 
                 // Set a WebViewClient to handle URL loading within the WebView.
                 webView.webViewClient = object : WebViewClient() {
